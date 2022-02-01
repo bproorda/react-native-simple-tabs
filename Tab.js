@@ -3,7 +3,6 @@ import Pressable from 'react-native/Libraries/Components/Pressable/Pressable';
 
 const Tab = (props) => {
   const { onPress, title = 'Save', currentTab } = props;
-  //console.log(props)
 
   const tabBackgroundcolor = currentTab ? 'green' : 'gray'
 

@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 
 import Tab from './Tab';
 import TabScreen from './TabScreen';
+import TabHeader from './TabHeader';
 
 export default function App() {
   const [currentTab, setCurrentTab] = useState('Profile');
@@ -15,9 +16,7 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <View style={[styles.container, {height: '10%', flex: 0}]}>
-        <Text>{`CurrentTab: ${currentTab}`}</Text>
-      </View>
+      <TabHeader currentTab={currentTab} />
       <View style={styles.mainScreen}>
         <TabScreen tabTitle='Profile' currentTab={currentTab}>
           <Text>Profile</Text>
