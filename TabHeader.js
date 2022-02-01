@@ -1,8 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
-const TabHeader = (props) => {
-    const { currentTab } = props;
+const TabHeader = ({ tabNavigation: {currentTab} }) => {
 
     return (
         <View style={[styles.header, { height: '10%', flex: 0 }]}>

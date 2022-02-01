@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
 import Tab from './Tab';
 
-const BottomTabBar = (props) => {
-    const { tabsList, currentTab, updateCurrentTab } = props;
+const BottomTabBar = ({ tabNavigation }) => {
+    const {  currentTab, updateCurrentTab, tabsList } = tabNavigation;
 
     return (
         <View style={styles.tabBar}>

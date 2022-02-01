@@ -1,52 +1,32 @@
-import React, { useState } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import { Text } from 'react-native';
 
-import Tab from './Tab';
+import Container from './Container';
 import TabScreen from './TabScreen';
 import TabHeader from './TabHeader';
 import BottomTabBar from './BottomTabBar';
+import MainScreen from './MainScreen';
 
 export default function App() {
-  const [currentTab, setCurrentTab] = useState('Profile');
-
-  const updateCurrentTab = (title) => {
-    setCurrentTab(title)
-  }
 
   const tabsList = ['Profile', 'About', 'Settings']
 
   return (
-    <View style={styles.container}>
-      <TabHeader currentTab={currentTab} />
-      <View style={styles.mainScreen}>
-        <TabScreen tabTitle='Profile' currentTab={currentTab}>
+    <Container tabsList={tabsList}>
+      <TabHeader />
+      <MainScreen>
+        <TabScreen tabTitle='Profile'>
           <Text>Profile</Text>
         </TabScreen>
-        <TabScreen tabTitle='About' currentTab={currentTab}>
+        <TabScreen tabTitle='About'>
           <Text>About</Text>
         </TabScreen>
-        <TabScreen tabTitle='Settings' currentTab={currentTab}>
+        <TabScreen tabTitle='Settings'>
           <Text>Settings</Text>
         </TabScreen>
-      </View>
-      <BottomTabBar tabsList={tabsList} currentTab={currentTab} updateCurrentTab={updateCurrentTab} />
-    </View>
+      </MainScreen>
+      <BottomTabBar />
+    </Container>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  mainScreen: {
-    height: '80%',
-    width: '100%',
-    backgroundColor: 'blue',
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
