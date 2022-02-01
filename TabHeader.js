@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
 const TabHeader = (props) => {
@@ -6,7 +6,7 @@ const TabHeader = (props) => {
 
     return (
         <View style={[styles.header, { height: '10%', flex: 0 }]}>
-            <Text style={styles.headerText}>{`CurrentTab: ${currentTab}`}</Text>
+            <Text style={styles.headerText}>{`${currentTab}`}</Text>
         </View>
     )
 };
