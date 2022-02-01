@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 
-const Container = ({ tabsList, children }) => {
+const TabNavigatorContainer = ({ tabsList, children }) => {
     const [currentTab, setCurrentTab] = useState('Profile');
 
     const updateCurrentTab = (title) => {
@@ -27,4 +27,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default Container;
+export default TabNavigatorContainer;

@@ -1,20 +1,22 @@
 import React from 'react';
 import { Text } from 'react-native';
 
-import Container from './Container';
-import TabScreen from './TabScreen';
-import TabHeader from './TabHeader';
-import BottomTabBar from './BottomTabBar';
-import MainScreen from './MainScreen';
+import {
+  TabNavigatorContainer,
+  TabMainScreen,
+  TabHeader,
+  TabScreen,
+  BottomTabBar
+} from './SimpleTabNavigator';
 
 export default function App() {
 
   const tabsList = ['Profile', 'About', 'Settings']
 
   return (
-    <Container tabsList={tabsList}>
+    <TabNavigatorContainer tabsList={tabsList}>
       <TabHeader />
-      <MainScreen>
+      <TabMainScreen>
         <TabScreen tabTitle='Profile'>
           <Text>Profile</Text>
         </TabScreen>
@@ -24,9 +26,9 @@ export default function App() {
         <TabScreen tabTitle='Settings'>
           <Text>Settings</Text>
         </TabScreen>
-      </MainScreen>
+      </TabMainScreen>
       <BottomTabBar />
-    </Container>
+    </TabNavigatorContainer>
   );
 }
 

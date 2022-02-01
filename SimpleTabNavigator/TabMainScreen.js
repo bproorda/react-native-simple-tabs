@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 
-const MainScreen = ({ children, tabNavigation }) => {
+const TabMainScreen = ({ children, tabNavigation }) => {
 
     return (
         <View style={styles.mainScreen}>
@@ -24,4 +24,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default MainScreen;
+export default TabMainScreen;
