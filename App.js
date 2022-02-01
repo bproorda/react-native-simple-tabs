@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
 
 import Tab from './Tab';
+import TabScreen from './TabScreen';
 
 export default function App() {
-  const [ currentTab, setCurrentTab ] = useState('Profile');
+  const [currentTab, setCurrentTab] = useState('Profile');
 
   const updateCurrentTab = (title) => {
     setCurrentTab(title)
@@ -14,14 +15,24 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <View style={styles.mainScreen }>
-        <Text>Main Screen</Text>
+      <View style={[styles.container, {height: '10%', flex: 0}]}>
         <Text>{`CurrentTab: ${currentTab}`}</Text>
+      </View>
+      <View style={styles.mainScreen}>
+        <TabScreen tabTitle='Profile' currentTab={currentTab}>
+          <Text>Profile</Text>
+        </TabScreen>
+        <TabScreen tabTitle='About' currentTab={currentTab}>
+            <Text>About</Text>
+        </TabScreen>
+        <TabScreen tabTitle='Settings' currentTab={currentTab}>
+            <Text>Settings</Text>
+        </TabScreen>
       </View>
       <View style={styles.tabContainer}>
         {tabsList.map(tab => (
-           (
-             <Tab onPress={() => updateCurrentTab(tab)} key={tab} title={tab} currentTab={currentTab == tab}/>
+          (
+            <Tab onPress={() => updateCurrentTab(tab)} key={tab} title={tab} currentTab={currentTab == tab} />
           )
         ))}
       </View>
